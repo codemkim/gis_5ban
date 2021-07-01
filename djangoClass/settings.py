@@ -15,7 +15,7 @@ from pathlib import Path
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-# 프로젝트의 경로
+# 최상위 프로젝트의 경로
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 local_env = open(os.path.join(BASE_DIR, '.env'))
