@@ -12,7 +12,7 @@
             </a>
         </span> |
 
-        {% if not user.authenticated %}
+        {% if not user.is_authenticated %}
         <span>
             <a href="{% url 'accountapp:login' %}">
                 Login
@@ -26,10 +26,16 @@
 
         {% else %}
         <span>
+            <a href="{% url 'accountapp:detail' pk=user.pk %}">
+                mypage
+            </a>
+        </span> |
+        <span>
             <a href="{% url 'accountapp:logout' %}">
                 Logout
             </a>
         </span>
+
         {% endif %}
     </div>
 
