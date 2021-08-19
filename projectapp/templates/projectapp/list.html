@@ -10,7 +10,6 @@
         }
 
         .container div {
-            box-shadow: 0 0 1rem gray;
           display: flex;
           justify-content: center;
           align-items: center;
@@ -38,7 +37,7 @@
                          alt="">
                 </a>
 
-                <span class="m-2 NNB_B">{{ project.name }}</span>
+                <span class="m-2 NNB_B">{{ project.name | truncatechars:10 }}</span>
 
             </div>
 
