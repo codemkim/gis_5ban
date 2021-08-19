@@ -6,7 +6,7 @@
             <h4>Quit</h4>
         </div>
         <div>
-            <form action="{% url 'accountapp:delete' pk=target_name.pk %}" method="post">
+            <form action="{% url 'accountapp:delete' pk=target_user.pk %}" method="post">
                 {% csrf_token %}
 
                 <div class="m-5">

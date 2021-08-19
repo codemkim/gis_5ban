@@ -40,7 +40,7 @@ class AccountCreateView(CreateView):
 
 class AccountDetailView(DetailView, MultipleObjectMixin):
     model = User
-    context_object_name = 'target_name'
+    context_object_name = 'target_user'
     template_name = 'accountapp/detail.html'
 
     paginate_by = 20
@@ -59,7 +59,7 @@ class AccountUpdateView(UpdateView):
     model = User
     form_class = AccountCreationForm
     template_name = 'accountapp/update.html'
-    context_object_name = 'target_name'
+    context_object_name = 'target_user'
 
     def get_success_url(self):
         return reverse('accountapp:detail', kwargs={'pk':self.object.pk})
@@ -69,7 +69,7 @@ class AccountUpdateView(UpdateView):
 @method_decorator(has_ownership, 'post')
 class AccountDeleteView(DeleteView):
     model = User
-    context_object_name = 'target_name'
+    context_object_name = 'target_user'
     success_url = reverse_lazy('accountapp:hello_world')
     template_name = 'accountapp/delete.html'
 
